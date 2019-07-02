@@ -15,7 +15,7 @@
 
 .green-light {
     background-color: #9AE6B4;
-    color: #22543D;
+    color: #2F855A;
 }
 
 .green-dark {
@@ -42,7 +42,7 @@
 
 .hover\:green-light:hover {
     background-color: #9AE6B4;
-    color: #22543D;
+    color: #2F855A;
 }
 
 .hover\:green-dark:hover {
@@ -53,17 +53,17 @@
 /* ---------------- gray color ----------------- */
 .gray {
     background-color: #A0AEC0;
-    color: #4A5568;
+    color: #F7FAFC;
 }
 
 .gray-light {
-    background-color: #EDF2F7;
+    background-color: #E2E8F0;
     color: #4A5568;
 }
 
 .gray-dark {
     background-color: #4A5568;
-    color:#EDF2F7;
+    color:#F7FAFC;
 }
 
 .text-gray {
@@ -71,7 +71,7 @@
 }
 
 .text-gray-light {
-    color: #EDF2F7;
+    color: #E2E8F0;
 }
 
 .text-gray-dark {
@@ -80,34 +80,34 @@
 
 .hover\:gray:hover {
     background-color: #A0AEC0;
-    color: #4A5568;
+    color: #F7FAFC;
 }
 
 .hover\:gray-light:hover {
-    background-color: #EDF2F7;
+    background-color: #E2E8F0;
     color: #4A5568;
 }
 
 .hover\:gray-dark:hover {
     background-color: #4A5568;
-    color:#EDF2F7;
+    color:#F7FAFC;
 }
 
 
 /* ---------------- red color ----------------- */
 .red {
     background-color: #F56565;
-    color: #FED7D7;
+    color: #FFF5F5;
 }
 
 .red-light {
-    background-color: #FED7D7;
+    background-color: #FEB2B2;
     color: #C53030;
 }
 
 .red-dark {
     background-color: #C53030;
-    color:#FED7D7;
+    color:#FFF5F5;
 }
 
 .text-red {
@@ -115,7 +115,7 @@
 }
 
 .text-red-light {
-    color: #FED7D7;
+    color: #FEB2B2;
 }
 
 .text-red-dark {
@@ -124,33 +124,33 @@
 
 .hover\:red:hover {
     background-color: #F56565;
-    color: #FED7D7;
+    color: #FFF5F5;
 }
 
 .hover\:red-light:hover {
-    background-color: #FED7D7;
+    background-color: #FEB2B2;
     color: #C53030;
 }
 
 .hover\:red-dark:hover {
     background-color: #C53030;
-    color:#FED7D7;
+    color:#FFF5F5;
 }
 
 /* ---------------- orange color ----------------- */
 .orange {
     background-color: #ED8936;
-    color: #FEEBC8;
+    color: #FFFAF0;
 }
 
 .orange-light {
-    background-color: #FEEBC8;
+    background-color: #FBD38D;
     color: #C05621;
 }
 
 .orange-dark {
     background-color: #C05621;
-    color:#FEEBC8;
+    color:#FFFAF0;
 }
 
 .text-orange {
@@ -158,7 +158,7 @@
 }
 
 .text-orange-light {
-    color: #FEEBC8;
+    color: #FBD38D;
 }
 
 .text-orange-dark {
@@ -167,33 +167,33 @@
 
 .hover\:orange:hover {
     background-color: #ED8936;
-    color: #FEEBC8;
+    color: #FFFAF0;
 }
 
 .hover\:orange-light:hover {
-    background-color: #FEEBC8;
+    background-color: #FBD38D;
     color: #C05621;
 }
 
 .hover\:orange-dark:hover {
     background-color: #C05621;
-    color:#FEEBC8;
+    color:#FFFAF0;
 }
 
 /* ---------------- yellow color ----------------- */
 .yellow {
     background-color: #ECC94B;
-    color: #FEFCBF;
+    color: #FFFFF0;
 }
 
 .yellow-light {
-    background-color: #FEFCBF;
+    background-color: #FAF089;
     color: #B7791F;
 }
 
 .yellow-dark {
     background-color: #B7791F;
-    color:#FEFCBF;
+    color:#FFFFF0;
 }
 
 .text-yellow {
@@ -201,7 +201,7 @@
 }
 
 .text-yellow-light {
-    color: #FEFCBF;
+    color: #FAF089;
 }
 
 .text-yellow-dark {
@@ -210,33 +210,33 @@
 
 .hover\:yellow:hover {
     background-color: #ECC94B;
-    color: #FEFCBF;
+    color: #FFFFF0;
 }
 
 .hover\:yellow-light:hover {
-    background-color: #FEFCBF;
+    background-color: #FAF089;
     color: #B7791F;
 }
 
 .hover\:yellow-dark:hover {
     background-color: #B7791F;
-    color:#FEEBC8;
+    color:#FFFFF0;
 }
 
 /* ---------------- teal color ----------------- */
 .teal {
     background-color: #38B2AC;
-    color: #B2F5EA;
+    color: #E6FFFA;
 }
 
 .teal-light {
-    background-color: #B2F5EA;
+    background-color: #81E6D9;
     color: #2C7A7B;
 }
 
 .teal-dark {
     background-color: #2C7A7B;
-    color:#B2F5EA;
+    color:#E6FFFA;
 }
 
 .text-teal {
@@ -244,7 +244,7 @@
 }
 
 .text-teal-light {
-    color: #B2F5EA;
+    color: #81E6D9;
 }
 
 .text-teal-dark {
@@ -253,33 +253,33 @@
 
 .hover\:teal:hover {
     background-color: #38B2AC;
-    color: #B2F5EA;
+    color: #E6FFFA;
 }
 
 .hover\:teal-light:hover {
-    background-color: #B2F5EA;
+    background-color: #81E6D9;
     color: #2C7A7B;
 }
 
 .hover\:teal-dark:hover {
     background-color: #2C7A7B;
-    color:#B2F5EA;
+    color:#E6FFFA;
 }
 
 /* ---------------- blue color ----------------- */
 .blue {
     background-color: #4299E1;
-    color: #BEE3F8;
+    color: #EBF8FF;
 }
 
 .blue-light {
-    background-color: #BEE3F8;
+    background-color: #90CDF4;
     color: #2B6CB0;
 }
 
 .blue-dark {
     background-color: #2B6CB0;
-    color:#BEE3F8;
+    color:#EBF8FF;
 }
 
 .text-blue {
@@ -287,7 +287,7 @@
 }
 
 .text-blue-light {
-    color: #BEE3F8;
+    color: #90CDF4;
 }
 
 .text-blue-dark {
@@ -296,33 +296,33 @@
 
 .hover\:blue:hover {
     background-color: #4299E1;
-    color: #BEE3F8;
+    color: #EBF8FF;
 }
 
 .hover\:blue-light:hover {
-    background-color: #BEE3F8;
+    background-color: #90CDF4;
     color: #2B6CB0;
 }
 
 .hover\:blue-dark:hover {
     background-color: #2B6CB0;
-    color:#BEE3F8;
+    color:#EBF8FF;
 }
 
 /* ---------------- indigo color ----------------- */
 .indigo {
     background-color: #667EEA;
-    color: #C3DAFE;
+    color: #EBF4FF;
 }
 
 .indigo-light {
-    background-color: #C3DAFE;
+    background-color: #A3BFFA;
     color: #4C51BF;
 }
 
 .indigo-dark {
     background-color: #4C51BF;
-    color:#C3DAFE;
+    color:#EBF4FF;
 }
 
 .text-indigo {
@@ -330,7 +330,7 @@
 }
 
 .text-indigo-light {
-    color: #BEE3F8;
+    color: #A3BFFA;
 }
 
 .text-indigo-dark {
@@ -339,33 +339,33 @@
 
 .hover\:indigo:hover {
     background-color: #667EEA;
-    color: #C3DAFE;
+    color: #EBF4FF;
 }
 
 .hover\:indigo-light:hover {
-    background-color: #C3DAFE;
+    background-color: #A3BFFA;
     color: #4C51BF;
 }
 
 .hover\:indigo-dark:hover {
     background-color: #4C51BF;
-    color:#C3DAFE;
+    color:#EBF4FF;
 }
 
 /* ---------------- purple color ----------------- */
 .purple {
     background-color: #9F7AEA;
-    color: #E9D8FD;
+    color: #FAF5FF;
 }
 
 .purple-light {
-    background-color: #E9D8FD;
+    background-color: #D6BCFA;
     color: #6B46C1;
 }
 
 .purple-dark {
     background-color: #6B46C1;
-    color:#E9D8FD;
+    color:#FAF5FF;
 }
 
 .text-purple {
@@ -373,7 +373,7 @@
 }
 
 .text-purple-light {
-    color: #E9D8FD;
+    color: #D6BCFA;
 }
 
 .text-purple-dark {
@@ -382,33 +382,33 @@
 
 .hover\:purple:hover {
     background-color: #9F7AEA;
-    color: #E9D8FD;
+    color: #FAF5FF;
 }
 
 .hover\:purple-light:hover {
-    background-color: #E9D8FD;
+    background-color: #D6BCFA;
     color: #6B46C1;
 }
 
 .hover\:purple-dark:hover {
     background-color: #6B46C1;
-    color:#E9D8FD;
+    color:#FAF5FF;
 }
 
 /* ---------------- pink color ----------------- */
 .pink {
     background-color: #ED64A6;
-    color: #FED7E2;
+    color: #FFF5F7;
 }
 
 .pink-light {
-    background-color: #FED7E2;
+    background-color: #FBB6CE;
     color: #B83280;
 }
 
 .pink-dark {
     background-color: #B83280;
-    color:#FED7E2;
+    color:#FFF5F7;
 }
 
 .text-pink {
@@ -416,7 +416,7 @@
 }
 
 .text-pink-light {
-    color: #FED7E2;
+    color: #FBB6CE;
 }
 
 .text-pink-dark {
@@ -425,15 +425,15 @@
 
 .hover\:pink:hover {
     background-color: #ED64A6;
-    color: #FED7E2;
+    color: #FFF5F7;
 }
 
 .hover\:pink-light:hover {
-    background-color: #FED7E2;
+    background-color: #FBB6CE;
     color: #B83280;
 }
 
 .hover\:pink-dark:hover {
     background-color: #B83280;
-    color:#FED7E2;
+    color:#FFF5F7;
 }
