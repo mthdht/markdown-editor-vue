@@ -99,26 +99,44 @@
                 return 'text-' + this.color + '-dark'
             }
 
+        },
+        methods: {
+            applyStyle: function (name) {
+                console.log()
+                switch (name) {
+                    case 'edit':
+                        this.activePanel = 'edit'
+                        break
+                    case 'preview':
+                        this.activePanel = 'preview'
+                        break
+                    case 'doublePanel':
+                        this.activePanel = 'doublePanel'
+                }
+            }
         }
     }
 </script>
 
 <template>
-    <article class="markdown-editor" id="markdown-editor">
-        <section class="toolbar" :class="toolbarClass">
-            <button v-for="(value, name, index) in buttons"
-                    :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
-                    :key="index" class="toolbar-button">
-                <i class="material-icons">{{ value.class }}</i>
-            </button>
-        </section>
-        <section class="content">
-            <div class="markdown" :class="showPanelEdit">
-                <textarea :class="textAreaColor" name="" id="" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
-            </div>
-            <div class="preview" :class="showPanelPreview"></div>
-        </section>
-    </article>
+    <div class="wrapper" style="height: 600px">
+        <article class="markdown-editor" id="markdown-editor">
+            <section class="toolbar" :class="toolbarClass">
+                <button v-for="(value, name, index) in buttons"
+                        @click="applyStyle(name)"
+                        :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
+                        :key="index" class="toolbar-button">
+                    <i class="material-icons">{{ value.class }}</i>
+                </button>
+            </section>
+            <section class="content">
+                <div class="markdown" :class="showPanelEdit">
+                    <textarea :class="textAreaColor" name="" id="" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
+                </div>
+                <div class="preview" :class="showPanelPreview"></div>
+            </section>
+        </article>
+    </div>
 </template>
 
 <style scoped>
@@ -128,6 +146,7 @@
     body, html {
         height: 100%;
     }
+
     * {
         box-sizing: border-box;
     }
@@ -149,14 +168,10 @@
         width: 100%;
     }
 
-    .w-half {
-        width: 50%;
-    }
-
     .markdown-editor {
         display: flex;
         flex-flow: column;
-        height: 600px;
+        height: 100%;
     }
 
     .toolbar {
