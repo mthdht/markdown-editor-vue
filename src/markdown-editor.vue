@@ -53,20 +53,20 @@
                         class: 'remove_red_eye'
                     },
                 },
-                activePanel: 'doublePanel'
+                activePanel: window.innerWidth < 768 ? 'edit' : 'doublePanel'
             };
         },
         props: {
             color: {
                 type: String,
-                default: 'blue',
+                default: 'teal',
                 validator: function (value) {
                     return ['gray', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'indigo', 'purple', 'pink'].indexOf(value) !== -1
                 }
             },
             theme: {
                 type: String,
-                default: 'dark',
+                default: 'basic',
                 validator: function (value) {
                     return ['dark', 'light', 'basic'].indexOf(value) !== -1
                 }
@@ -87,26 +87,36 @@
                 }
             },
             toolbarButtonActive: function () {
-                return this.theme == 'dark' || this.theme == 'light' ? this.color : this.color + '-dark'
+                return this.theme === 'basic' ? this.color + '-dark' : this.color
+            },
+            showPanelEdit: function () {
+                return this.activePanel === 'preview' ? 'hidden' : ''
+            },
+            showPanelPreview: function () {
+                return this.activePanel === 'edit' ? 'hidden' : ''
+            },
+            textAreaColor: function () {
+                return 'text-' + this.color + '-dark'
             }
+
         }
     }
 </script>
 
 <template>
-    <article class="markdown-editor">
+    <article class="markdown-editor" id="markdown-editor">
         <section class="toolbar" :class="toolbarClass">
-            <button v-for="(value, name, index) in buttons" :class="[name === activePanel ? toolbarButtonActive : '', toolbarButtonClass]" :key="index" class="toolbar-button">
+            <button v-for="(value, name, index) in buttons"
+                    :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
+                    :key="index" class="toolbar-button">
                 <i class="material-icons">{{ value.class }}</i>
             </button>
         </section>
         <section class="content">
-            <div class="markdown">
-                <textarea name="" id="" autofocus placeholder="texte"></textarea>
+            <div class="markdown" :class="showPanelEdit">
+                <textarea :class="textAreaColor" name="" id="" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
             </div>
-            <div class="preview">
-
-            </div>
+            <div class="preview" :class="showPanelPreview"></div>
         </section>
     </article>
 </template>
@@ -115,28 +125,73 @@
     @import "~material-design-icons/iconfont/material-icons.css";
     @import "color.css";
 
-    button:focus {
+    body, html {
+        height: 100%;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    .markdown textarea {
+        border: none;
+        padding: 10px;
+    }
+
+    *:focus {
         outline: none;
     }
 
+    .hidden {
+        display: none !important;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .w-half {
+        width: 50%;
+    }
+
     .markdown-editor {
-        border: 1px solid red;
+        display: flex;
+        flex-flow: column;
+        height: 600px;
     }
 
     .toolbar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding: 5px 10px;
+
     }
 
     .toolbar-button {
-        margin: 0 10px;
+        margin: 0 6px;
         border: 0;
-        padding: 5px;
+        padding: 8px;
         display: flex;
         align-items: center;
         border-radius: 7px;
 
+    }
+
+    .content {
+        display: flex;
+        flex-flow: column;
+        align-items: stretch;
+        flex-grow: 1;
+    }
+
+    .markdown {
+        border-bottom: 2px solid darkgray;
+        flex-grow: 1;
+    }
+
+    .preview {
+        border-top: 2px solid darkgray;
+        flex-grow: 1;
     }
 
     @media (min-width: 640px) {
@@ -147,17 +202,33 @@
     }
 
     @media (min-width: 768px) {
+        .md-flex {
+            display: flex !important;
+        }
+
         .toolbar {
             padding: 10px 20px;
             justify-content: start;
         }
-    }
 
-    @media (min-width: 1024px) {
+        .content {
+            flex-flow: row;
+        }
 
-    }
+        .markdown {
+            border-right: 2px solid darkgray;
+            border-bottom: none;
+            width: 50%;
+        }
 
-    @media (min-width: 1248px) {
+        .preview {
+            border-left: 2px solid darkgray;
+            border-top: none;
+            width: 50%;
+        }
 
+        .markdown textarea {
+            padding: 20px;
+        }
     }
 </style>
