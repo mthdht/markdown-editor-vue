@@ -1,0 +1,439 @@
+/* color utilities class
+ *
+ * Author: mthdht
+ * Licence: "MIT"
+ *
+ * Those colors are taken from the Tailwindcss colors palette (light: 200, basic: 500, dark: 700)
+ * see: https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+ */
+
+/* green color */
+.green {
+    background-color: #48BB78;
+    color: #F0FFF4;
+}
+
+.green-light {
+    background-color: #9AE6B4;
+    color: #22543D;
+}
+
+.green-dark {
+    background-color: #2F855A;
+    color:#F0FFF4;
+}
+
+.text-green {
+    color: #48BB78;
+}
+
+.text-green-light {
+    color: #9AE6B4;
+}
+
+.text-green-dark {
+    color: #2F855A;
+}
+
+.hover\:green:hover {
+    background-color: #48BB78;
+    color: #F0FFF4;
+}
+
+.hover\:green-light:hover {
+    background-color: #9AE6B4;
+    color: #22543D;
+}
+
+.hover\:green-dark:hover {
+    background-color: #2F855A;
+    color:#F0FFF4;
+}
+
+/* ---------------- gray color ----------------- */
+.gray {
+    background-color: #A0AEC0;
+    color: #4A5568;
+}
+
+.gray-light {
+    background-color: #EDF2F7;
+    color: #4A5568;
+}
+
+.gray-dark {
+    background-color: #4A5568;
+    color:#EDF2F7;
+}
+
+.text-gray {
+    color: #A0AEC0;
+}
+
+.text-gray-light {
+    color: #EDF2F7;
+}
+
+.text-gray-dark {
+    color: #4A5568;
+}
+
+.hover\:gray:hover {
+    background-color: #A0AEC0;
+    color: #4A5568;
+}
+
+.hover\:gray-light:hover {
+    background-color: #EDF2F7;
+    color: #4A5568;
+}
+
+.hover\:gray-dark:hover {
+    background-color: #4A5568;
+    color:#EDF2F7;
+}
+
+
+/* ---------------- red color ----------------- */
+.red {
+    background-color: #F56565;
+    color: #FED7D7;
+}
+
+.red-light {
+    background-color: #FED7D7;
+    color: #C53030;
+}
+
+.red-dark {
+    background-color: #C53030;
+    color:#EDF2F7;
+}
+
+.text-red {
+    color: #F56565;
+}
+
+.text-red-light {
+    color: #FED7D7;
+}
+
+.text-red-dark {
+    color: #C53030;
+}
+
+.hover\:red:hover {
+    background-color: #F56565;
+    color: #FED7D7;
+}
+
+.hover\:red-light:hover {
+    background-color: #FED7D7;
+    color: #C53030;
+}
+
+.hover\:red-dark:hover {
+    background-color: #C53030;
+    color:#FED7D7;
+}
+
+/* ---------------- orange color ----------------- */
+.orange {
+    background-color: #ED8936;
+    color: #FEEBC8;
+}
+
+.orange-light {
+    background-color: #FEEBC8;
+    color: #C05621;
+}
+
+.orange-dark {
+    background-color: #C05621;
+    color:#FEEBC8;
+}
+
+.text-orange {
+    color: #ED8936;
+}
+
+.text-orange-light {
+    color: #FEEBC8;
+}
+
+.text-orange-dark {
+    color: #C05621;
+}
+
+.hover\:orange:hover {
+    background-color: #ED8936;
+    color: #FEEBC8;
+}
+
+.hover\:orange-light:hover {
+    background-color: #FEEBC8;
+    color: #C05621;
+}
+
+.hover\:orange-dark:hover {
+    background-color: #C05621;
+    color:#FEEBC8;
+}
+
+/* ---------------- yellow color ----------------- */
+.yellow {
+    background-color: #ECC94B;
+    color: #FEFCBF;
+}
+
+.yellow-light {
+    background-color: #FEFCBF;
+    color: #B7791F;
+}
+
+.yellow-dark {
+    background-color: #B7791F;
+    color:#FEFCBF;
+}
+
+.text-yellow {
+    color: #ECC94B;
+}
+
+.text-yellow-light {
+    color: #FEFCBF;
+}
+
+.text-yellow-dark {
+    color: #B7791F;
+}
+
+.hover\:yellow:hover {
+    background-color: #ECC94B;
+    color: #FEFCBF;
+}
+
+.hover\:yellow-light:hover {
+    background-color: #FEFCBF;
+    color: #B7791F;
+}
+
+.hover\:yellow-dark:hover {
+    background-color: #B7791F;
+    color:#FEEBC8;
+}
+
+/* ---------------- teal color ----------------- */
+.teal {
+    background-color: #38B2AC;
+    color: #B2F5EA;
+}
+
+.teal-light {
+    background-color: #B2F5EA;
+    color: #2C7A7B;
+}
+
+.teal-dark {
+    background-color: #2C7A7B;
+    color:#B2F5EA;
+}
+
+.text-teal {
+    color: #38B2AC;
+}
+
+.text-teal-light {
+    color: #B2F5EA;
+}
+
+.text-teal-dark {
+    color: #2C7A7B;
+}
+
+.hover\:teal:hover {
+    background-color: #38B2AC;
+    color: #B2F5EA;
+}
+
+.hover\:teal-light:hover {
+    background-color: #B2F5EA;
+    color: #2C7A7B;
+}
+
+.hover\:teal-dark:hover {
+    background-color: #2C7A7B;
+    color:#B2F5EA;
+}
+
+/* ---------------- blue color ----------------- */
+.blue {
+    background-color: #4299E1;
+    color: #BEE3F8;
+}
+
+.blue-light {
+    background-color: #BEE3F8;
+    color: #2B6CB0;
+}
+
+.blue-dark {
+    background-color: #2B6CB0;
+    color:#BEE3F8;
+}
+
+.text-blue {
+    color: #4299E1;
+}
+
+.text-blue-light {
+    color: #BEE3F8;
+}
+
+.text-blue-dark {
+    color: #2B6CB0;
+}
+
+.hover\:blue:hover {
+    background-color: #4299E1;
+    color: #BEE3F8;
+}
+
+.hover\:blue-light:hover {
+    background-color: #BEE3F8;
+    color: #2B6CB0;
+}
+
+.hover\:blue-dark:hover {
+    background-color: #2B6CB0;
+    color:#BEE3F8;
+}
+
+/* ---------------- indigo color ----------------- */
+.indigo {
+    background-color: #667EEA;
+    color: #C3DAFE;
+}
+
+.indigo-light {
+    background-color: #C3DAFE;
+    color: #4C51BF;
+}
+
+.indigo-dark {
+    background-color: #4C51BF;
+    color:#C3DAFE;
+}
+
+.text-indigo {
+    color: #667EEA;
+}
+
+.text-indigo-light {
+    color: #BEE3F8;
+}
+
+.text-indigo-dark {
+    color: #4C51BF;
+}
+
+.hover\:indigo:hover {
+    background-color: #667EEA;
+    color: #C3DAFE;
+}
+
+.hover\:indigo-light:hover {
+    background-color: #C3DAFE;
+    color: #4C51BF;
+}
+
+.hover\:indigo-dark:hover {
+    background-color: #4C51BF;
+    color:#C3DAFE;
+}
+
+/* ---------------- purple color ----------------- */
+.purple {
+    background-color: #9F7AEA;
+    color: #E9D8FD;
+}
+
+.purple-light {
+    background-color: #E9D8FD;
+    color: #6B46C1;
+}
+
+.purple-dark {
+    background-color: #6B46C1;
+    color:#E9D8FD;
+}
+
+.text-purple {
+    color: #9F7AEA;
+}
+
+.text-purple-light {
+    color: #E9D8FD;
+}
+
+.text-purple-dark {
+    color: #6B46C1;
+}
+
+.hover\:purple:hover {
+    background-color: #9F7AEA;
+    color: #E9D8FD;
+}
+
+.hover\:purple-light:hover {
+    background-color: #E9D8FD;
+    color: #6B46C1;
+}
+
+.hover\:purple-dark:hover {
+    background-color: #6B46C1;
+    color:#E9D8FD;
+}
+
+/* ---------------- pink color ----------------- */
+.pink {
+    background-color: #ED64A6;
+    color: #FED7E2;
+}
+
+.pink-light {
+    background-color: #FED7E2;
+    color: #B83280;
+}
+
+.pink-dark {
+    background-color: #B83280;
+    color:#FED7E2;
+}
+
+.text-pink {
+    color: #ED64A6;
+}
+
+.text-pink-light {
+    color: #FED7E2;
+}
+
+.text-pink-dark {
+    color: #B83280;
+}
+
+.hover\:pink:hover {
+    background-color: #ED64A6;
+    color: #FED7E2;
+}
+
+.hover\:pink-light:hover {
+    background-color: #FED7E2;
+    color: #B83280;
+}
+
+.hover\:pink-dark:hover {
+    background-color: #B83280;
+    color:#FED7E2;
+}
