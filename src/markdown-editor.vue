@@ -77,11 +77,14 @@
                     return ['dark', 'light', 'basic'].indexOf(value) !== -1
                 }
             },
-            content: {
+            value: {
                 type: String,
             }
         },
         computed: {
+            content: function() {
+              return this.value
+            },
             toolbarClass: function () {
                 return this.theme === 'dark' ? this.color + '-dark' : this.theme === 'light' ? this.color + '-light' : this.color
             },
@@ -108,7 +111,7 @@
                 return 'text-' + this.color + '-dark'
             },
             preview: function () {
-                return marked(this.content)
+                return marked(this.value)
             }
 
         },
@@ -123,7 +126,7 @@
             this.offset = 0
         },
         watch: {
-          content: function () {
+          value: function () {
               this.selectionStart = this.getElement().selectionStart
               this.selectionEnd = this.getElement().selectionEnd
           }
@@ -197,19 +200,19 @@
 <template>
     <div class="markdown-editor" id="markdown-editor">
             <div class="toolbar" :class="toolbarClass">
-                <button v-for="(value, name, index) in buttons"
+                <button v-for="(button, name, index) in buttons"
                         @click="applyStyle(name)"
                         :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
                         :key="index" class="toolbar-button"
-                        :title="value.title">
-                    <i class="material-icons">{{ value.class }}</i>
+                        :title="button.title">
+                    <i class="material-icons">{{ button.class }}</i>
                 </button>
             </div>
             <div class="content" id="content" style="overflow-y: hidden">
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content"
-                              :value="content"
-                              @input="$emit('input', $event.target.value)"
+                              :value="value"
+                              @input="$emit('input', this.content)"
                               :class="textAreaColor"
                               autofocus
                               placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>

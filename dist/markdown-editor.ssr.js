@@ -2728,11 +2728,14 @@ Prism.languages.js = Prism.languages.javascript;
                 return ['dark', 'light', 'basic'].indexOf(value) !== -1
             }
         },
-        content: {
+        value: {
             type: String,
         }
     },
     computed: {
+        content: function() {
+          return this.value
+        },
         toolbarClass: function () {
             return this.theme === 'dark' ? this.color + '-dark' : this.theme === 'light' ? this.color + '-light' : this.color
         },
@@ -2759,7 +2762,7 @@ Prism.languages.js = Prism.languages.javascript;
             return 'text-' + this.color + '-dark'
         },
         preview: function () {
-            return marked(this.content)
+            return marked(this.value)
         }
 
     },
@@ -2774,7 +2777,7 @@ Prism.languages.js = Prism.languages.javascript;
         this.offset = 0;
     },
     watch: {
-      content: function () {
+      value: function () {
           this.selectionStart = this.getElement().selectionStart;
           this.selectionEnd = this.getElement().selectionEnd;
       }
@@ -2979,19 +2982,19 @@ var server = createInjectorSSR;/* script */
 var __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"markdown-editor",attrs:{"id":"markdown-editor"}},[_vm._ssrNode("<div"+(_vm._ssrClass("toolbar",_vm.toolbarClass))+">"+(_vm._ssrList((_vm.buttons),function(value,name,index){return ("<button"+(_vm._ssrAttr("title",value.title))+(_vm._ssrClass("toolbar-button",[name === _vm.activePanel ? _vm.toolbarButtonActive  : '', _vm.toolbarButtonClass]))+"><i class=\"material-icons\">"+_vm._ssrEscape(_vm._s(value.class))+"</i></button>")}))+"</div> <div id=\"content\" class=\"content\" style=\"overflow-y: hidden\"><div"+(_vm._ssrClass("markdown",_vm.showPanelEdit))+"><textarea id=\"markdown-content\" autofocus=\"autofocus\" placeholder=\"# Add a heading\""+(_vm._ssrAttr("value",_vm.content))+(_vm._ssrClass(null,_vm.textAreaColor))+" style=\"width: 100%; height: 100%; resize: none; overflow-y: auto\"></textarea></div> <div"+(_vm._ssrClass("preview",[_vm.showPanelPreview, _vm.textAreaColor]))+" style=\"overflow-y: auto\">"+(_vm._s(_vm.preview))+"</div></div>")])};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"markdown-editor",attrs:{"id":"markdown-editor"}},[_vm._ssrNode("<div"+(_vm._ssrClass("toolbar",_vm.toolbarClass))+">"+(_vm._ssrList((_vm.buttons),function(button,name,index){return ("<button"+(_vm._ssrAttr("title",button.title))+(_vm._ssrClass("toolbar-button",[name === _vm.activePanel ? _vm.toolbarButtonActive  : '', _vm.toolbarButtonClass]))+"><i class=\"material-icons\">"+_vm._ssrEscape(_vm._s(button.class))+"</i></button>")}))+"</div> <div id=\"content\" class=\"content\" style=\"overflow-y: hidden\"><div"+(_vm._ssrClass("markdown",_vm.showPanelEdit))+"><textarea id=\"markdown-content\" autofocus=\"autofocus\" placeholder=\"# Add a heading\""+(_vm._ssrAttr("value",_vm.value))+(_vm._ssrClass(null,_vm.textAreaColor))+" style=\"width: 100%; height: 100%; resize: none; overflow-y: auto\"></textarea></div> <div"+(_vm._ssrClass("preview",[_vm.showPanelPreview, _vm.textAreaColor]))+" style=\"overflow-y: auto\">"+(_vm._s(_vm.preview))+"</div></div>")])};
 var __vue_staticRenderFns__ = [];
 
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-b2825d94_0", { source: "*[data-v-b2825d94]{box-sizing:border-box;margin:0}.markdown textarea[data-v-b2825d94]{border:none;padding:10px}[data-v-b2825d94]:focus{outline:0}.hidden[data-v-b2825d94]{display:none!important}.w-full[data-v-b2825d94]{width:100%}.markdown-editor[data-v-b2825d94]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-b2825d94]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-b2825d94]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-b2825d94]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-b2825d94]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-b2825d94]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-b2825d94]{padding:10px}}@media (min-width:768px){.md-flex[data-v-b2825d94]{display:flex!important}.toolbar[data-v-b2825d94]{padding:10px 20px;justify-content:start}.content[data-v-b2825d94]{flex-flow:row}.markdown[data-v-b2825d94]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-b2825d94]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-b2825d94]{padding:20px}}", map: undefined, media: undefined });
+    inject("data-v-d775d1c2_0", { source: "*[data-v-d775d1c2]{box-sizing:border-box;margin:0}.markdown textarea[data-v-d775d1c2]{border:none;padding:10px}[data-v-d775d1c2]:focus{outline:0}.hidden[data-v-d775d1c2]{display:none!important}.w-full[data-v-d775d1c2]{width:100%}.markdown-editor[data-v-d775d1c2]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-d775d1c2]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-d775d1c2]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-d775d1c2]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-d775d1c2]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-d775d1c2]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-d775d1c2]{padding:10px}}@media (min-width:768px){.md-flex[data-v-d775d1c2]{display:flex!important}.toolbar[data-v-d775d1c2]{padding:10px 20px;justify-content:start}.content[data-v-d775d1c2]{flex-flow:row}.markdown[data-v-d775d1c2]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-d775d1c2]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-d775d1c2]{padding:20px}}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  var __vue_scope_id__ = "data-v-b2825d94";
+  var __vue_scope_id__ = "data-v-d775d1c2";
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-b2825d94";
+  var __vue_module_identifier__ = "data-v-d775d1c2";
   /* functional template */
   var __vue_is_functional_template__ = false;
 
