@@ -53,7 +53,11 @@
                         class: 'remove_red_eye'
                     },
                 },
-                activePanel: window.innerWidth < 768 ? 'edit' : 'doublePanel'
+                activePanel: '',
+                content: '',
+                selectionStart: 0,
+                selectionEnd: 0,
+                offset: 0
             };
         },
         props: {
@@ -97,13 +101,72 @@
             },
             textAreaColor: function () {
                 return 'text-' + this.color + '-dark'
-            }
+            },
 
         },
+        mounted: function () {
+            this.activePanel = document.getElementById('markdown-editor').offsetWidth < 768 ? 'edit' : 'doublePanel'
+        },
+        updated: function () {
+            this.getElement().focus()
+            this.getElement().setSelectionRange(this.selectionEnd + this.offset, this.selectionEnd + this.offset)
+            this.offset = 0
+        },
+        watch: {
+          content: function () {
+              this.selectionStart = this.getElement().selectionStart
+              this.selectionEnd = this.getElement().selectionEnd
+          }
+        },
         methods: {
+            getElement: function() {
+                return document.getElementById('markdown-content')
+            },
+            getSelectedArea: function() {
+                let element = this.getElement()
+                return element.value.substring(element.selectionStart,element.selectionEnd)
+            },
             applyStyle: function (name) {
-                console.log()
+                let element = this.getElement()
+                this.selectionStart = element.selectionStart
+                this.selectionEnd = element.selectionEnd
                 switch (name) {
+                    case 'bold':
+                        this.content = this.content.slice(0,element.selectionStart) + '**' + this.getSelectedArea() + '**' + this.content.slice(element.selectionEnd);
+                        this.offset = 2
+                        break
+                    case 'italic':
+                        this.content = this.content.slice(0,element.selectionStart) + '*' + this.getSelectedArea() + '*' + this.content.slice(element.selectionEnd);
+                        this.offset = 1
+                        break
+                    case 'heading':
+                        this.content = this.content.slice(0,element.selectionStart) + '# ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
+                        this.offset = (this.selectionStart - this.selectionEnd)
+                        break
+                    case 'numberedList':
+                        this.content = this.content.slice(0,element.selectionStart) + '- ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
+                        this.offset = 2
+                        break
+                    case 'bulletedList':
+                        this.content = this.content.slice(0,element.selectionStart) + '1. ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
+                        this.offset = 2
+                        break
+                    case 'code':
+                        this.content = this.content.slice(0,element.selectionStart) + '``` css\n ' + this.getSelectedArea() + '\n```' + this.content.slice(element.selectionEnd);
+                        this.offset = (this.selectionEnd - this.selectionStart) + 7
+                        break
+                    case 'quote':
+                        this.content = this.content.slice(0,element.selectionStart) + '> ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
+                        this.offset = 2
+                        break
+                    case 'link':
+                        this.content = this.content.slice(0,element.selectionStart) + '[' + this.getSelectedArea() +']()' + this.content.slice(element.selectionEnd);
+                        this.offset = this.getSelectedArea() ? 3 : 1
+                        break
+                    case 'image':
+                        this.content = this.content.slice(0,element.selectionStart) + '![' + this.getSelectedArea() +']()' + this.content.slice(element.selectionEnd);
+                        this.offset = this.getSelectedArea() ? 4 : 2
+                        break
                     case 'edit':
                         this.activePanel = 'edit'
                         break
@@ -125,13 +188,14 @@
                 <button v-for="(value, name, index) in buttons"
                         @click="applyStyle(name)"
                         :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
-                        :key="index" class="toolbar-button">
+                        :key="index" class="toolbar-button"
+                        :title="value.title">
                     <i class="material-icons">{{ value.class }}</i>
                 </button>
             </section>
-            <section class="content">
+            <section class="content" id="content">
                 <div class="markdown" :class="showPanelEdit">
-                    <textarea :class="textAreaColor" name="" id="" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
+                    <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
                 </div>
                 <div class="preview" :class="showPanelPreview"></div>
             </section>
