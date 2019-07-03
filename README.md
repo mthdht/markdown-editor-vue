@@ -64,7 +64,7 @@ npm install npm@latest -g
 
 1. Install NPM packages
 ```sh
-npm install markdown-editor-vue
+npm install markdown-editor-vuejs
 ```
 
 
@@ -75,7 +75,7 @@ npm install markdown-editor-vue
 First, you have to import the newly installed package
 ``` javascript
 // other import
-import MarkdownEditor from 'markdown-editor-vue'
+import MarkdownEditor from 'markdown-editor-vuejs'
 
 export default {
     // your component code
