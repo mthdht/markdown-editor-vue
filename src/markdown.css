@@ -17,13 +17,6 @@
     font-family: 'Roboto Slab', serif;
 }
 
-.preview :not(pre) code {
-    background-color: #CBD5E0;
-    padding: 5px;
-    border-radius: 0.25rem;
-    color: #F56565;
-}
-
 
 .preview a {
     color: #4299E1;
@@ -80,9 +73,11 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-    padding: .1em;
+:not(pre) > code {
+    padding: .2em;
     border-radius: .3em;
+    background-color: #E2E8F0;
+    color: #F56565;
 }
 
 .token.comment,
@@ -182,6 +177,7 @@ pre > code.highlight {
     outline: 0.4em solid #c94922;
     outline-offset: .4em;
 }
+
 
 /* overrides color-values for the Line Numbers plugin
  * http://prismjs.com/plugins/line-numbers/

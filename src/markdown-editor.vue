@@ -190,8 +190,7 @@
 </script>
 
 <template>
-    <div class="wrapper" style="height: 600px">
-        <div class="markdown-editor" id="markdown-editor">
+    <div class="markdown-editor" id="markdown-editor">
             <div class="toolbar" :class="toolbarClass">
                 <button v-for="(value, name, index) in buttons"
                         @click="applyStyle(name)"
@@ -208,7 +207,6 @@
                 <div class="preview" :class="[showPanelPreview, textAreaColor]" v-html="preview" style="overflow-y: auto"></div>
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>
