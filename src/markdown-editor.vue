@@ -209,7 +209,7 @@
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content"
                               :value="value"
-                              @input="$emit('input', applyStyle())"
+                              @input="$emit('input', this.content)"
                               :class="textAreaColor"
                               autofocus
                               placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>
