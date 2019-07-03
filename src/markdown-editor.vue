@@ -77,6 +77,9 @@
                 validator: function (value) {
                     return ['dark', 'light', 'basic'].indexOf(value) !== -1
                 }
+            },
+            content: {
+                type: String,
             }
         },
         computed: {
@@ -111,7 +114,7 @@
 
         },
         mounted: function () {
-            this.activePanel = document.getElementById('markdown-editor').offsetWidth < 768 ? 'edit' : 'doublePanel'
+            this.activePanel = document.getElementById('markdown-editor').offsetWidth < 658 ? 'edit' : 'doublePanel'
             prism.highlightAll()
         },
         updated: function () {
@@ -202,7 +205,12 @@
             </div>
             <div class="content" id="content" style="overflow-y: hidden">
                 <div class="markdown" :class="showPanelEdit">
-                    <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>
+                    <textarea id="markdown-content"
+                              :value="value"
+                              @input="$emit('input', $event.target.value)"
+                              :class="textAreaColor"
+                              autofocus
+                              placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>
                 </div>
                 <div class="preview" :class="[showPanelPreview, textAreaColor]" v-html="preview" style="overflow-y: auto"></div>
             </div>
