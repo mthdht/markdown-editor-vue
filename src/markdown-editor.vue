@@ -57,7 +57,6 @@
                     },
                 },
                 activePanel: '',
-                content: '',
                 selectionStart: 0,
                 selectionEnd: 0,
                 offset: 0
