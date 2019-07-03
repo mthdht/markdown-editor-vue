@@ -211,12 +211,7 @@
 
 <style scoped>
     @import "~material-design-icons/iconfont/material-icons.css";
-    @import "color.css";
     @import "markdown.css";
-
-    body, html {
-        height: 100%;
-    }
 
     * {
         box-sizing: border-box;
