@@ -188,8 +188,8 @@
 
 <template>
     <div class="wrapper" style="height: 600px">
-        <article class="markdown-editor" id="markdown-editor">
-            <section class="toolbar" :class="toolbarClass">
+        <div class="markdown-editor" id="markdown-editor">
+            <div class="toolbar" :class="toolbarClass">
                 <button v-for="(value, name, index) in buttons"
                         @click="applyStyle(name)"
                         :class="[name === activePanel ? toolbarButtonActive  : '', toolbarButtonClass]"
@@ -197,20 +197,21 @@
                         :title="value.title">
                     <i class="material-icons">{{ value.class }}</i>
                 </button>
-            </section>
-            <section class="content" id="content">
+            </div>
+            <div class="content" id="content">
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
                 </div>
-                <div class="preview" :class="showPanelPreview" v-html="preview"></div>
-            </section>
-        </article>
+                <div class="preview" :class="[showPanelPreview, textAreaColor]" v-html="preview"></div>
+            </div>
+        </div>
     </div>
 </template>
 
 <style scoped>
     @import "~material-design-icons/iconfont/material-icons.css";
     @import "color.css";
+    @import "markdown.css";
 
     body, html {
         height: 100%;
