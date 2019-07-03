@@ -1,4 +1,6 @@
 <script>
+    import marked from 'marked'
+
     export default {
         name: 'MarkdownEditor', // vue component name
         data() {
@@ -102,6 +104,9 @@
             textAreaColor: function () {
                 return 'text-' + this.color + '-dark'
             },
+            preview: function () {
+                return marked(this.content)
+            }
 
         },
         mounted: function () {
@@ -141,7 +146,7 @@
                         break
                     case 'heading':
                         this.content = this.content.slice(0,element.selectionStart) + '# ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
-                        this.offset = (this.selectionStart - this.selectionEnd)
+                        this.offset = 2
                         break
                     case 'numberedList':
                         this.content = this.content.slice(0,element.selectionStart) + '- ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
@@ -149,11 +154,11 @@
                         break
                     case 'bulletedList':
                         this.content = this.content.slice(0,element.selectionStart) + '1. ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
-                        this.offset = 2
+                        this.offset = 3
                         break
                     case 'code':
                         this.content = this.content.slice(0,element.selectionStart) + '``` css\n ' + this.getSelectedArea() + '\n```' + this.content.slice(element.selectionEnd);
-                        this.offset = (this.selectionEnd - this.selectionStart) + 7
+                        this.offset -= (this.selectionEnd - this.selectionStart) - 7
                         break
                     case 'quote':
                         this.content = this.content.slice(0,element.selectionStart) + '> ' + this.getSelectedArea() + this.content.slice(element.selectionEnd);
@@ -197,7 +202,7 @@
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
                 </div>
-                <div class="preview" :class="showPanelPreview"></div>
+                <div class="preview" :class="showPanelPreview" v-html="preview"></div>
             </section>
         </article>
     </div>
@@ -213,6 +218,7 @@
 
     * {
         box-sizing: border-box;
+        margin: 0;
     }
 
     .markdown textarea {
@@ -271,6 +277,7 @@
     .preview {
         border-top: 2px solid darkgray;
         flex-grow: 1;
+        padding: 10px;
     }
 
     @media (min-width: 640px) {
