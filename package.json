@@ -1,13 +1,14 @@
 {
   "name": "markdown-editor-vuejs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A light markdown editor with vuejs",
   "main": "dist/markdown-editor.ssr.js",
   "module": "dist/markdown-editor.esm.js",
   "unpkg": "dist/markdown-editor.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/markdown.css"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
