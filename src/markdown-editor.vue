@@ -185,7 +185,10 @@
                         break
                     case 'doublePanel':
                         this.activePanel = 'doublePanel'
+                    default:
+                        return this.content
                 }
+                return this.content
             }
         }
     }
@@ -206,7 +209,7 @@
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content"
                               :value="value"
-                              @input="$emit('input', $event.target.value)"
+                              @input="$emit('input', this.applyStyle())"
                               :class="textAreaColor"
                               autofocus
                               placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>

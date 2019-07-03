@@ -1,6 +1,6 @@
 {
   "name": "markdown-editor-vuejs",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "A light markdown editor with vuejs",
   "main": "dist/markdown-editor.ssr.js",
   "module": "dist/markdown-editor.esm.js",
