@@ -1,5 +1,6 @@
 <script>
     import marked from 'marked'
+    import prism from 'prismjs'
 
     export default {
         name: 'MarkdownEditor', // vue component name
@@ -111,8 +112,10 @@
         },
         mounted: function () {
             this.activePanel = document.getElementById('markdown-editor').offsetWidth < 768 ? 'edit' : 'doublePanel'
+            prism.highlightAll()
         },
         updated: function () {
+            prism.highlightAll()
             this.getElement().focus()
             this.getElement().setSelectionRange(this.selectionEnd + this.offset, this.selectionEnd + this.offset)
             this.offset = 0
@@ -198,11 +201,11 @@
                     <i class="material-icons">{{ value.class }}</i>
                 </button>
             </div>
-            <div class="content" id="content">
+            <div class="content" id="content" style="overflow-y: hidden">
                 <div class="markdown" :class="showPanelEdit">
-                    <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none;"></textarea>
+                    <textarea id="markdown-content" v-model="content" :class="textAreaColor" autofocus placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>
                 </div>
-                <div class="preview" :class="[showPanelPreview, textAreaColor]" v-html="preview"></div>
+                <div class="preview" :class="[showPanelPreview, textAreaColor]" v-html="preview" style="overflow-y: auto"></div>
             </div>
         </div>
     </div>
