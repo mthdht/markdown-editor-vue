@@ -76,7 +76,7 @@ First, you have to import the newly installed package
 ``` javascript
 // other import
 import MarkdownEditor from 'markdown-editor-vuejs'
-import 'markdown-editor-vuejs/src/markdown.css // if you want to enjoy my style :)
+import 'markdown-editor-vuejs/src/markdown.css' // if you want to enjoy my style :)
 
 export default {
     // your component code
