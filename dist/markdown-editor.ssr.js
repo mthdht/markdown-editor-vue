@@ -2731,6 +2731,7 @@ Prism.languages.js = Prism.languages.javascript;
         },
         value: {
             type: String,
+            default: ''
         }
     },
     computed: {
@@ -2987,13 +2988,13 @@ var __vue_staticRenderFns__ = [];
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-649fb4e7_0", { source: "*[data-v-649fb4e7]{box-sizing:border-box;margin:0}.markdown textarea[data-v-649fb4e7]{border:none;padding:10px}[data-v-649fb4e7]:focus{outline:0}.hidden[data-v-649fb4e7]{display:none!important}.w-full[data-v-649fb4e7]{width:100%}.markdown-editor[data-v-649fb4e7]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-649fb4e7]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-649fb4e7]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-649fb4e7]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-649fb4e7]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-649fb4e7]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-649fb4e7]{padding:10px}}@media (min-width:768px){.md-flex[data-v-649fb4e7]{display:flex!important}.toolbar[data-v-649fb4e7]{padding:10px 20px;justify-content:start}.content[data-v-649fb4e7]{flex-flow:row}.markdown[data-v-649fb4e7]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-649fb4e7]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-649fb4e7]{padding:20px}}", map: undefined, media: undefined });
+    inject("data-v-6ed4efd8_0", { source: "*[data-v-6ed4efd8]{box-sizing:border-box;margin:0}.markdown textarea[data-v-6ed4efd8]{border:none;padding:10px}[data-v-6ed4efd8]:focus{outline:0}.hidden[data-v-6ed4efd8]{display:none!important}.w-full[data-v-6ed4efd8]{width:100%}.markdown-editor[data-v-6ed4efd8]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-6ed4efd8]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-6ed4efd8]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-6ed4efd8]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-6ed4efd8]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-6ed4efd8]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-6ed4efd8]{padding:10px}}@media (min-width:768px){.md-flex[data-v-6ed4efd8]{display:flex!important}.toolbar[data-v-6ed4efd8]{padding:10px 20px;justify-content:start}.content[data-v-6ed4efd8]{flex-flow:row}.markdown[data-v-6ed4efd8]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-6ed4efd8]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-6ed4efd8]{padding:20px}}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  var __vue_scope_id__ = "data-v-649fb4e7";
+  var __vue_scope_id__ = "data-v-6ed4efd8";
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-649fb4e7";
+  var __vue_module_identifier__ = "data-v-6ed4efd8";
   /* functional template */
   var __vue_is_functional_template__ = false;
 
