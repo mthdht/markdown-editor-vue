@@ -76,6 +76,7 @@ First, you have to import the newly installed package
 ``` javascript
 // other import
 import MarkdownEditor from 'markdown-editor-vuejs'
+import 'markdown-editor-vuejs/src/markdown.css // if you want to enjoy my style :)
 
 export default {
     // your component code
@@ -94,7 +95,7 @@ Then, you can use the component anywhere in your template:
 </template>
 ```
 
-> You hust need to bind the v-model to some data attribute
+> You just need to bind the v-model to some data attribute
 
 By default, this markdown editor has teal color theme but you can change it by passing a color prop.
 

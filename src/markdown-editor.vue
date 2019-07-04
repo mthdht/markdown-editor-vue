@@ -225,6 +225,7 @@
 </template>
 
 <style scoped>
+    /*import style*/
     @import "markdown.css";
 
     * {
