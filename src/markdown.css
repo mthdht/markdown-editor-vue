@@ -7,6 +7,8 @@
 @import "color.css";
 @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 .preview {
     font-family: 'Lora', serif;
     font-weight: 500;
