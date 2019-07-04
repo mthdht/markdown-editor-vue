@@ -2710,7 +2710,8 @@ Prism.languages.js = Prism.languages.javascript;
             activePanel: '',
             selectionStart: 0,
             selectionEnd: 0,
-            offset: 0
+            offset: 0,
+            content: ''
         };
     },
     props: {
@@ -2733,9 +2734,6 @@ Prism.languages.js = Prism.languages.javascript;
         }
     },
     computed: {
-        content: function() {
-          return this.value
-        },
         toolbarClass: function () {
             return this.theme === 'dark' ? this.color + '-dark' : this.theme === 'light' ? this.color + '-light' : this.color
         },
@@ -2780,6 +2778,7 @@ Prism.languages.js = Prism.languages.javascript;
       value: function () {
           this.selectionStart = this.getElement().selectionStart;
           this.selectionEnd = this.getElement().selectionEnd;
+          this.content = this.value;
       }
     },
     methods: {
@@ -2842,7 +2841,7 @@ Prism.languages.js = Prism.languages.javascript;
                 default:
                     return this.content
             }
-            return this.content
+            this.$emit('input', this.content);
         }
     }
 };function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
@@ -2988,13 +2987,13 @@ var __vue_staticRenderFns__ = [];
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-d775d1c2_0", { source: "*[data-v-d775d1c2]{box-sizing:border-box;margin:0}.markdown textarea[data-v-d775d1c2]{border:none;padding:10px}[data-v-d775d1c2]:focus{outline:0}.hidden[data-v-d775d1c2]{display:none!important}.w-full[data-v-d775d1c2]{width:100%}.markdown-editor[data-v-d775d1c2]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-d775d1c2]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-d775d1c2]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-d775d1c2]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-d775d1c2]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-d775d1c2]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-d775d1c2]{padding:10px}}@media (min-width:768px){.md-flex[data-v-d775d1c2]{display:flex!important}.toolbar[data-v-d775d1c2]{padding:10px 20px;justify-content:start}.content[data-v-d775d1c2]{flex-flow:row}.markdown[data-v-d775d1c2]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-d775d1c2]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-d775d1c2]{padding:20px}}", map: undefined, media: undefined });
+    inject("data-v-649fb4e7_0", { source: "*[data-v-649fb4e7]{box-sizing:border-box;margin:0}.markdown textarea[data-v-649fb4e7]{border:none;padding:10px}[data-v-649fb4e7]:focus{outline:0}.hidden[data-v-649fb4e7]{display:none!important}.w-full[data-v-649fb4e7]{width:100%}.markdown-editor[data-v-649fb4e7]{display:flex;flex-flow:column;height:100%}.toolbar[data-v-649fb4e7]{display:flex;flex-wrap:wrap;justify-content:center;padding:5px 10px}.toolbar-button[data-v-649fb4e7]{margin:0 6px;border:0;padding:8px;display:flex;align-items:center;border-radius:7px}.content[data-v-649fb4e7]{display:flex;flex-flow:column;align-items:stretch;flex-grow:1}.markdown[data-v-649fb4e7]{border-bottom:2px solid #a9a9a9;flex-grow:1}.preview[data-v-649fb4e7]{border-top:2px solid #a9a9a9;flex-grow:1;padding:10px}@media (min-width:640px){.toolbar-button[data-v-649fb4e7]{padding:10px}}@media (min-width:768px){.md-flex[data-v-649fb4e7]{display:flex!important}.toolbar[data-v-649fb4e7]{padding:10px 20px;justify-content:start}.content[data-v-649fb4e7]{flex-flow:row}.markdown[data-v-649fb4e7]{border-right:2px solid #a9a9a9;border-bottom:none;width:50%}.preview[data-v-649fb4e7]{border-left:2px solid #a9a9a9;border-top:none;width:50%}.markdown textarea[data-v-649fb4e7]{padding:20px}}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  var __vue_scope_id__ = "data-v-d775d1c2";
+  var __vue_scope_id__ = "data-v-649fb4e7";
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-d775d1c2";
+  var __vue_module_identifier__ = "data-v-649fb4e7";
   /* functional template */
   var __vue_is_functional_template__ = false;
 

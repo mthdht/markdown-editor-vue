@@ -59,7 +59,8 @@
                 activePanel: '',
                 selectionStart: 0,
                 selectionEnd: 0,
-                offset: 0
+                offset: 0,
+                content: ''
             };
         },
         props: {
@@ -82,9 +83,6 @@
             }
         },
         computed: {
-            content: function() {
-              return this.value
-            },
             toolbarClass: function () {
                 return this.theme === 'dark' ? this.color + '-dark' : this.theme === 'light' ? this.color + '-light' : this.color
             },
@@ -129,6 +127,7 @@
           value: function () {
               this.selectionStart = this.getElement().selectionStart
               this.selectionEnd = this.getElement().selectionEnd
+              this.content = this.value
           }
         },
         methods: {
@@ -191,7 +190,7 @@
                     default:
                         return this.content
                 }
-                return this.content
+                this.$emit('input', this.content)
             }
         }
     }
@@ -212,7 +211,7 @@
                 <div class="markdown" :class="showPanelEdit">
                     <textarea id="markdown-content"
                               :value="value"
-                              @input="$emit('input', this.content)"
+                              @input="$emit('input', $event.target.value)"
                               :class="textAreaColor"
                               autofocus
                               placeholder="# Add a heading" style="width: 100%; height: 100%; resize: none; overflow-y: auto"></textarea>

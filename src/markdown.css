@@ -23,6 +23,10 @@
     font-weight: bold;
 }
 
+.preview blockquote {
+    border-left: 5px solid lightslategray;
+}
+
 /*
 Name:       Base16 Atelier Sulphurpool Light
 Author:     Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
