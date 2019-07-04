@@ -2,6 +2,7 @@
     import marked from 'marked'
     import prism from 'prismjs'
 
+
     export default {
         name: 'MarkdownEditor', // vue component name
         data() {
@@ -223,9 +224,8 @@
         </div>
 </template>
 
-<style src="../node_modules/material-design-icons/iconfont/material-icons.css">
-</style>
 <style scoped>
+    @import '~material-design-icons/iconfont/material-icons.css';
     @import "markdown.css";
 
     * {
