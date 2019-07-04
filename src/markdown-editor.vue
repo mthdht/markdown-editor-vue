@@ -188,6 +188,7 @@
                         break
                     case 'doublePanel':
                         this.activePanel = 'doublePanel'
+                        break
                     default:
                         return this.content
                 }
@@ -222,6 +223,8 @@
         </div>
 </template>
 
+<style src="../node_modules/material-design-icons/iconfont/material-icons.css">
+</style>
 <style scoped>
     @import "markdown.css";
 

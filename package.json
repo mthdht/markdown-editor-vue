@@ -1,7 +1,11 @@
 {
   "name": "markdown-editor-vuejs",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "description": "A light markdown editor with vuejs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mthdht/markdown-editor-vue.git"
+  },
   "main": "dist/markdown-editor.ssr.js",
   "module": "dist/markdown-editor.esm.js",
   "unpkg": "dist/markdown-editor.min.js",

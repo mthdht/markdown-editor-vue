@@ -79,15 +79,22 @@ import MarkdownEditor from 'markdown-editor-vuejs'
 
 export default {
     // your component code
+    data: function() {
+        return {
+            content: '' //choose whatever name you want
+        }
+    }
 }
 ```
 
 Then, you can use the component anywhere in your template:
 ```javascript
 <template>
-    <markdown-editor></markdown-editor>
+    <markdown-editor v-model="content"></markdown-editor>
 </template>
 ```
+
+> You hust need to bind the v-model to some data attribute
 
 By default, this markdown editor has teal color theme but you can change it by passing a color prop.
 
@@ -98,7 +105,7 @@ You can also change the basic default theme to be lighter or darker
 the themes available are: **light** - **dark** - **basic**
 
 ```javascript
-<markdown-editor color="blue" theme="dark"></markdown-editor>
+<markdown-editor v-model="content" color="blue" theme="dark"></markdown-editor>
 ```
 
 
@@ -123,7 +130,7 @@ Distributed under the MIT License.
 <!-- CONTACT -->
 ## Contact
 
-Mthdht - [@your_twitter](https://twitter.com/mthdht) - mthdht@gmail.com
+Mthdht - [@mthdht](https://twitter.com/mthdht) - mthdht@gmail.com
 
 Project Link: [https://github.com/mthdht/markdown-editor-vue](https://github.com/mthdht/markdown-editor-vue)
 
